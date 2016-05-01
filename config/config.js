@@ -1,7 +1,7 @@
 var path = require('path'),
     rootPath = path.normalize(__dirname + '/..');
 
-    var dotenv = require('dotenv').config({path: rootPath + '/.env'});
+var dotenv = require('dotenv').config({path: rootPath + '/.env'});
 
 var config = {
     root: rootPath,
