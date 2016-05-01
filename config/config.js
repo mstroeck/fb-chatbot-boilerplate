@@ -1,34 +1,17 @@
 var path = require('path'),
-    rootPath = path.normalize(__dirname + '/..'),
-    env = process.env.NODE_ENV || 'development';
+    rootPath = path.normalize(__dirname + '/..');
+
+    var dotenv = require('dotenv').config({path: rootPath + '/.env'});
 
 var config = {
-  development: {
     root: rootPath,
     app: {
       name: 'chatbot'
     },
     port: process.env.PORT || 3000,
-    db: 'postgres://beavr_prdctn_u:hightail-vermeil-jeep-nostrum-cuba-omega@beavr-prdctn.cfiqbxj1zyb4.eu-west-1.rds.amazonaws.com/chancenreich'
-  },
+    db: process.env.DB_CONNECTION_STRING || '',
+    page_access_token: process.env.PAGE_ACCESS_TOKEN || '',
+    verify_token: process.env.VERIFY_TOCKEN || ''
+  };
 
-  test: {
-    root: rootPath,
-    app: {
-      name: 'chatbot'
-    },
-    port: process.env.PORT || 3000,
-    db: 'postgres://localhost/chatbot-test'
-  },
-
-  production: {
-    root: rootPath,
-    app: {
-      name: 'chatbot'
-    },
-    port: process.env.PORT || 3000,
-    db: 'postgres://localhost/chatbot-production'
-  }
-};
-
-module.exports = config[env];
+module.exports = config;
