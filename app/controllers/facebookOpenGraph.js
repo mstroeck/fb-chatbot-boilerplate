@@ -1,4 +1,3 @@
-console.log('OIDA');
 module.exports = function() {
 
     function getUserName(sender) {
