@@ -1,7 +1,9 @@
 var path = require('path'),
     rootPath = path.normalize(__dirname + '/..');
 
-var dotenv = require('dotenv').config({path: rootPath + '/.env'});
+if (!process.env.IS_HEROKU) {
+    var dotenv = require('dotenv').config({path: rootPath + '/.env'});
+}
 
 var config = {
     root: rootPath,
