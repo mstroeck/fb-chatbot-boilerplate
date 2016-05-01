@@ -1,3 +1,4 @@
+
 # Logs
 logs
 *.log
@@ -34,3 +35,7 @@ node_modules
 
 # Environment-specific configuration
 .env
+
+# Various
+public/components
+.sass-cache
