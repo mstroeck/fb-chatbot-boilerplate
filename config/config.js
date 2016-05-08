@@ -12,7 +12,7 @@ var config = {
     },
     db: process.env.DATABASE_URL || '',
     page_access_token: process.env.PAGE_ACCESS_TOKEN || '',
-    verify_token: process.env.VERIFY_TOCKEN || ''
+    verify_token: process.env.VERIFY_TOKEN || ''
   };
 
 module.exports = config;
