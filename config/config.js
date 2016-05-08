@@ -10,7 +10,9 @@ var config = {
     app: {
       name: 'chatbot'
     },
-    db: process.env.DATABASE_URL || '',
+    env: process.env.ENV || '',
+    port: process.env.PORT || '',
+    database_url: process.env.DATABASE_URL || '',
     page_access_token: process.env.PAGE_ACCESS_TOKEN || '',
     verify_token: process.env.VERIFY_TOKEN || ''
   };

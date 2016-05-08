@@ -10,7 +10,7 @@ var methodOverride = require('method-override');
 var exphbs  = require('express-handlebars');
 
 module.exports = function(app, config) {
-  var env = process.env.NODE_ENV || 'development';
+  var env = config.env || 'development';
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';
 
@@ -38,13 +38,18 @@ module.exports = function(app, config) {
     require(controller)(app);
   });
 
+  var helpers = glob.sync(config.root + '/app/helpers/*.js');
+  controllers.forEach(function (helper) {
+    require(helper)(app);
+  });
+
   app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
   });
 
-  if(app.get('env') === 'development'){
+  if(config.env === 'development'){
     app.use(function (err, req, res, next) {
       res.status(err.status || 500);
       res.render('error', {
