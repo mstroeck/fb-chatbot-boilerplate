@@ -1,9 +1,15 @@
 {
-  "name": "chatbot",
+  "name": "fb-chatbot-boilerplate",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node app.js"
+  },
+  "homepage": "https://github.com/mstroeck/fb-chatbot-boilerplate",
+  "author": {
+    "name": "Michael G. Ströck",
+    "email": "michael@stroeck.com",
+    "url": "https://angel.co/mstroeck"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
