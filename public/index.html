@@ -4,12 +4,12 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="title" content="Beavr">
+<meta name="title" content="Beavr Bot">
 <meta name="ROBOTS" content="Job, Jobs, Recruiting, Recruitment, Job-board, HR, Human, Resources">
 <meta name="description" content="Beavr - In every job that must be done, there is an element of fun.">
 <meta name="abstract" content="Beavr - In every job that must be done, there is an element of fun.">
 
-<meta name="author" content="Beavr">
+<meta name="author" content="Michael G. Ströck">
 <meta name="publisher" content="Beavr GmbH">
 <meta name="copyright" content="Beavr GmbH">
 <meta name="revisit-after" content="2 days">
@@ -37,6 +37,25 @@
 
 <body>
 
+<!-- Facebook SDK for Javascript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '524153174440081',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 <div class="cloud floating hidden-sm hidden-xs">
     <img src="img/cloud.png" alt="Beavr Cloud">
 </div>
@@ -57,7 +76,7 @@
 <div id="wrapper">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="col-md-12">
                 <img src="img/logo-white.png" width="160px" alt="Beavr Logo" style="visibility: hidden; margin-top:-10px;" class="slideDown">
 
                 <ul class="social-network social-circle mt-0" style="display:block">
@@ -71,35 +90,43 @@
                     </li>
                 </ul>
 
-                <h2 class="hidden-sm hidden-xs">In every job that must be done, there is an element of fun.</h2>
-                <h2 class="subtitle">We're working hard to launch our website, and we'll be ready very soon.</h2>
+                <h2 class="hidden-sm hidden-xs" style="margin-top: 20px; margin-bottom: 0px;">
+                    Send-to-Messenger Plugin <br>
+                    <i class="fa fa-arrow-down fa-6 floating"></i>
+                </h2>
 
-                <div id="mauticform_wrapper_emailonly" class="mauticform_wrapper mt-40">
-                    <form class="form-inline signup" autocomplete="false" role="form" method="post" action="https://beavr.mautic.com/form/submit?formId=2" id="mauticform_emailonly" data-mautic-form="emailonly">
-                        <div class="mauticform-error" id="mauticform_emailonly_error"></div>
-                        <div class="mauticform-message" id="mauticform_emailonly_message"></div>
-                        <div class="mauticform-innerform">
-
-                            <div id="mauticform_emailonly_email"  data-validate="email" data-validation-type="email" class="mauticform-row mauticform-email mauticform-required">
-                                <input id="mauticform_input_emailonly_email" style="text-align: center" name="mauticform[email]" value="" placeholder="Enter your email address" class="mauticform-input" type="email" />
-                                <span class="mauticform-errormsg" style="display: none;">This is required.</span>
-                            </div>
-
-                            <div id="mauticform_emailonly_submit"  class="mauticform-row mauticform-button-wrapper mt-10">
-                                <button  class="btn btn-theme" type="submit" name="mauticform[submit]" id="mauticform_input_emailonly_submit" name="mauticform[submit]" value="" class="mauticform-button" value="1">Get notified!</button>
-                            </div>
-
-                            <input type="hidden" name="mauticform[formId]" id="mauticform_emailonly_id" value="2" />
-                            <input type="hidden" name="mauticform[return]" id="mauticform_emailonly_return" value="" />
-                            <input type="hidden" name="mauticform[formName]" id="mauticform_emailonly_name" value="emailonly" />
-
-                        </div>
-                    </form>
-                </div>
-
-
+                <center>
+                    <div class="fb-send-to-messenger"
+                        messenger_app_id="524153174440081"
+                        page_id="998156030265742"
+                        data-ref="beavr-bot-landing-page"
+                        color="blue"
+                        size="xlarge"
+                        style="margin-right: -70px; padding-top: 7px;">
+                    </div>
+                </center>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="hidden-sm hidden-xs" style="margin-top: 35px; margin-bottom: 0px;">
+                    Message-Us Plugin <br>
+                    <i class="fa fa-arrow-down fa-6 floating"></i>
+                </h2>
+                <center>
+                    <div class="fb-messengermessageus"
+                        messenger_app_id="524153174440081"
+                        page_id="998156030265742"
+                        data-ref="beavr-bot-landing-page"
+                        color="blue"
+                        size="xlarge"
+                        style="padding-top: 7px;">
+                    </div>
+                </center>
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -108,38 +135,8 @@
 <script>
 $(document).ready( function () {
         $('#wrapper').height($(document).height());
-        // I only have one form on the page but you can be more specific if need be.
-        var $form = $('form');
-
 });
-
-function appendResult(userText , className, iconClass){
-    var resultHTML = "<div class='stretchLeft result "+ className + "'>" + userText + " <span class='fa fa-" + iconClass + "'></span>" + "</div>";
-    $('body').append(resultHTML);
-    $('.result').delay(10000).fadeOut('1000');
-}
-
-/** Mautic.com JS Section **/
-if (typeof MauticSDKLoaded == 'undefined') {
-    var MauticSDKLoaded = true;
-    var head            = document.getElementsByTagName('head')[0];
-    var script          = document.createElement('script');
-    script.type         = 'text/javascript';
-    script.src          = 'https://beavr.mautic.com/mautic/media/js/mautic-form.js';
-    script.onload       = function() {
-        MauticSDK.onLoad();
-    };
-    head.appendChild(script);
-    var MauticDomain = 'https://beavr.mautic.com';
-    var MauticLang   = {
-        'submittingMessage': "Please wait..."
-    }
-}
 </script>
-
-<script src="https://beavr.mautic.com/mpower/focus/1.js" type="text/javascript" charset="utf-8" async="async"></script>
-
-<img src="https://beavr.mautic.com/mtracking.gif" style="display: none;" />
 
 </body>
 
