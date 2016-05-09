@@ -1,41 +1,44 @@
-module.exports = function() {
+var config = require('../../config/config'),
+    request = require('request')
 
-    function getUserName(sender) {
+module.exports = {
+
+    getUserName: function getUserName(sender) {
         request({
             url: 'https://graph.facebook.com/v2.6/' + sender,
             qs: {
-                access_token: app.get('page_access_token'),
+                access_token: config.page_access_token,
                 fields: "first_name,last_name"
             },
-            method: 'GET',
+            method: 'GET'
         }, function(error, response, body) {
             if (error) {
-                console.log('Error sending messages: ', error)
+                console.log('Error sending messages: ', error);
             } else if (response.body.error) {
-                console.log('Error: ', response.body.error)
+                console.log('Error: ', response.body.error);
             }
         }).on('data', function(data) {
             return JSON.parse(data)
         })
-    }
+    },
 
-    function sendTextMessage(sender, text) {
+    sendTextMessage: function sendTextMessage(sender, text) {
         messageData = {
             text:text
         }
         request({
             url: 'https://graph.facebook.com/v2.6/me/messages',
-            qs: {access_token:app.get('page_access_token')},
+            qs: {access_token:config.page_access_token},
             method: 'POST',
             json: {
                 recipient: {id: sender},
-                message: messageData,
+                message: messageData
             }
         }, function(error, response, body) {
             if (error) {
-                console.log('Error sending messages: ', error)
+                console.log('Error sending messages: ', error);
             } else if (response.body.error) {
-                console.log('Error: ', response.body.error)
+                console.log('Error: ', response.body.error);
             }
         })
     }
