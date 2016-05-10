@@ -48,6 +48,13 @@ router.post('/webhook/', function (req, res) {
       fb.sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200));
     }
 
+    // Handle receipt of a postback
+    if (event.postback) {
+      text = JSON.stringify(event.postback);
+      fb.sendTextMessage(sender, "Postback received: "+text.substring(0, 200));
+      continue;
+    }
+
   }
   res.sendStatus(200);
 
