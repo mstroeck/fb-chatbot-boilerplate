@@ -24,9 +24,13 @@ router.post('/webhook/', function (req, res) {
         event = req.body.entry[0].messaging[i];
         sender = event.sender.id;
 
-        // Handle opt-in via the Send-to-Messenger Plugin
+        // Handle opt-in via the Send-to-Messenger Plugin, store user data and greet the user by name
         if (event.optin) {
-            fb.sendTextMessage(sender, "Thanks for opting in to Beavr Bot!");
+            userNamePromise = fb.getUserName(sender);
+
+            userNamePromise.then(function(userName) {
+                fb.sendTextMessage(sender, "Thanks for opting in to Beavr Bot, " + userName.first_name + "!");
+            });
         }
 
         // Handle receipt of a message
