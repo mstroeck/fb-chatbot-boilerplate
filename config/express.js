@@ -1,13 +1,12 @@
-var express = require('express');
-var glob = require('glob');
-
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var compress = require('compression');
-var methodOverride = require('method-override');
-var exphbs  = require('express-handlebars');
+var express = require('express'),
+    glob = require('glob'),
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    compress = require('compression'),
+    methodOverride = require('method-override'),
+    exphbs  = require('express-handlebars');
 
 module.exports = function(app, config) {
   var env = config.env || 'development';
@@ -19,6 +18,7 @@ module.exports = function(app, config) {
     defaultLayout: 'main',
     partialsDir: [config.root + '/app/views/partials/']
   }));
+
   app.set('views', config.root + '/app/views');
   app.set('view engine', 'handlebars');
 
