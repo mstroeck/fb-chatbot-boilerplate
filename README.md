@@ -77,7 +77,6 @@ heroku config:set PAGE_ACCESS_TOKEN=your-page-access-token-here
 heroku config:set VERIFY_TOKEN=your-verify-token-here
 heroku config:set FB_APP_ID=your-app-id-here
 heroku config:set FB_PAGE_ID=your-page-id-here
-
 ```
 
 ```FB_APP_ID``` is the app ID of the Facebook App you just created. You can find it directly on the app dashboard. ```FB_PAGE_ID``` is the page ID of the Facebook Page you subscribed to in the app settings. ([Click here] (http://hellboundbloggers.com/2010/07/find-facebook-profile-and-page-id-8516/) in case you don't know how to find it.)
