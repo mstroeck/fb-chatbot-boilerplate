@@ -83,3 +83,9 @@ heroku config:set FB_PAGE_ID=your-page-id-here
 ```FB_APP_ID``` is the app ID of the Facebook App you just created. You can find it directly on the app dashboard. ```FB_PAGE_ID``` is the page ID of the Facebook Page you subscribed to in the app settings. ([Click here] (http://hellboundbloggers.com/2010/07/find-facebook-profile-and-page-id-8516/) in case you don't know how to find it.)
 
 # ⇨ Visit the landing page at the root of your Heroku instance and start chatting. 🤖
+
+## OK, so what now?
+
+If you want to make your bot available publicly, you will have to go through Facebook's [app review process] ((https://developers.facebook.com/docs/messenger-platform/app-review)) for Messenger bots.
+
+[Wit.ai](https://wit.ai) is a service that lets you easily create text or voice based bots that humans can chat with on their preferred messaging platform. Basic wit.ai functionality will be baked into this starter app at some point in the future.
