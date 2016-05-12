@@ -1,19 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <title>{{title }}</title>
-  <link rel="stylesheet" href="/css/style.css">
-  {{#if ENV_DEVELOPMENT}}
-    <script src="http://localhost:35729/livereload.js"></script>
-  {{/if}}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="title" content="Beavr Bot Boilerplate">
+<meta name="ROBOTS" content="ROBOTS"
+<meta name="description" content="A basic starter-app for getting into Facebook Messenger Platform bots.">
+<meta name="abstract" content="Following along with this tutorial will leave you with a live starter-app that implements a Facebook Messenger bot. Deployed to Heroku with a fun little landing page, persisting data, ready to rumble. Along the way, you will also learn how to use Heroku's free tier for hacking on projects like this.">
+
+<meta name="author" content="Michael G. Ströck">
+<link rel="shortcut icon" href="img/favicon.png">
+
+<title>Beavr Bot Boilerplate</title>
+
+<!-- Bootstrap -->
+<link href="/css/bootstrap.css" rel="stylesheet">
+<link href="/css/bootstrap-theme.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/animations.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+
+<!-- siimple style -->
+<link href="/css/style.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 </head>
+
 <body>
 
 
-  {{{body}}}
+    {{{body}}}
 
 
-  </body>
+<!-- jQuery - really just because this is a hacky boilerplate and you're probably wanna use it at some point :-) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script>
+$(document).ready( function () {
+        $('#wrapper').height($(document).height());
+});
+</script>
+
+</body>
+
 </html>

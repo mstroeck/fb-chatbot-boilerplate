@@ -1,4 +1,103 @@
+<!-- Facebook SDK for Javascript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{{ fb_app_id}}',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="cloud floating hidden-sm hidden-xs">
+    <img src="img/cloud.png" alt="Beavr Cloud">
+</div>
+
+<div class="cloud pos1 fliped floating hidden-xs">
+    <img src="img/cloud.png" alt="Beavr Cloud">
+</div>
+
+<div class="cloud pos2 floating hidden-xs">
+    <img src="img/cloud.png" alt="Beavr Cloud">
+</div>
+
+<div class="cloud pos3 fliped floating hidden-xs">
+    <img src="img/cloud.png" alt="Beavr Cloud">
+</div>
+
+<div id="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Bleep, bloop.
+                    <br>I'm a bot.
+                </h1>
 
 
-  <h1>{{title }}</h1>
-  <p>Welcome to {{title }}</p>
+                <h2 style="margin-top: 70px; margin-bottom: 0px;">
+                    Send-to-Messenger<br>
+                    <i class="fa fa-arrow-down fa-6 floating"></i>
+                </h2>
+
+                <center>
+                    <!-- Initiate chatting via the Send-To-Messenger Plugin -->
+                    <div class="fb-send-to-messenger"
+                        messenger_app_id="{{ fb_app_id }}"
+                        page_id="{{ fb_page_id }}"
+                        data-ref="beavr-bot-landing-page"
+                        color="blue"
+                        size="xlarge"
+                        style="margin-right: -70px; padding-top: 7px;">
+                    </div>
+                </center>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-md-12">
+                <h2 style="margin-top: 45px; margin-bottom: 0px;">
+                    Message-Us<br>
+                    <i class="fa fa-arrow-down fa-6 floating"></i>
+                </h2>
+                <center>
+                    <!-- Initiate chatting via the Messange-Us Plugin -->
+                    <div class="fb-messengermessageus"
+                        messenger_app_id="{{ fb_app_id }}"
+                        page_id="{{ fb_page_id }}"
+                        data-ref="beavr-bot-landing-page"
+                        color="blue"
+                        size="xlarge"
+                        style="padding-top: 7px;">
+                    </div>
+                </center>
+            </div>
+        </div>
+
+        <div class="row mb-30">
+            <div class="col-sm-12 align-center mt-30">
+                <h3 style="margin-top: 45px; margin-bottom: 0px; color: white; font-weight: 100;">
+                    Follow us
+                </h3>
+                <ul class="social-network social-circle">
+                    <li><a href="https://facebook.com/YOUR-FACEBOOK-PAGE" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="https://twitter.com/YOUR-TWITTER-HANDLE" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="https://www.linkedin.com/company/YOUR-LINKEDIN-WHATEVER" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                    <li><a href="mailto:your@email.com" class="icoFacebook" title="Email"><i class="fa fa-envelope"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
