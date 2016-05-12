@@ -5,7 +5,7 @@ Some of the code snippets were taken from Facebook's [official documentation](ht
 
 ## What to expect
 
-Following along with this tutorial will leave you with a **live starter-app** that implements a Facebook Messenger bot. **Deployed to Heroku with a fun little landing page, persisting data, ready to rumble.** Along the way, you will also learn how to use Heroku's free tier for hacking on projects like this.
+Following along with this tutorial will leave you with a **live starter-app** that implements a Facebook Messenger bot. **Deployed to Heroku with a fun little landing page, persisting data, ready to rumble.** Along the way, you will also learn how to use Heroku's free tier for hacking on projects like this. It **should take between 15 and 30 minutes** depending on prior experience.
 
 
 ## The basics
