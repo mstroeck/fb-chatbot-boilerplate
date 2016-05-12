@@ -35,10 +35,11 @@ Following along with this tutorial will leave you with a **live starter-app** th
     npm install
     ```
 
-6. Create a new Heroku instance, deploy a [free database instance] (https://devcenter.heroku.com/articles/heroku-postgresql) for your server, and push the code to the cloud.  Database configuration happens automagically via Heroku's DATABASE_URL environment variable.
+6. Create a new Heroku instance, deploy a [free database instance] (https://devcenter.heroku.com/articles/heroku-postgresql) for your server, and push the code to the cloud.  Database configuration happens automagically via Heroku's DATABASE_URL environment variable. We also set an environment variable called ```IS_HEROKU```, because this boilerplate works on any type of host but has some extra smarts for Heroku deployment.
 
     ```
     heroku create
+    heroku config:set IS_HEROKU=1
     heroku addons:create heroku-postgresql:hobby-dev
     git push heroku master
     ```  
