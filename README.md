@@ -48,7 +48,7 @@ Following along with this tutorial will leave you with a **live starter-app** th
 
 ### Setup your Facebook App
 
-1. Create or configure a Facebook App here (https://developers.facebook.com/apps/).
+1. Create or configure a Facebook App here (https://developers.facebook.com/apps/). (You also probably should set up a new Facebook Page while you're at it - don't use a page you are already using in production.)
 
     ![Create a new Facebook App](/public/img/documentation-img/create_new_app.png)
 
@@ -64,18 +64,17 @@ Following along with this tutorial will leave you with a **live starter-app** th
 
     ![Set up a Page Access Token](/public/img/documentation-img/create_access_token.png)
 
-4. Switch back to Terminal and use the following command to trigger your Facebbook app to start sending webhooks. Remember to use the Page Access Token you just created instead of the placeholder at the end of the request. 
+5. Switch back to Terminal and use the following command to trigger your Facebbook app to start sending webhooks. Remember to use the Page Access Token you just created instead of the placeholder at the end of the request. 
 
     ```
     curl -X POST "https://graph.facebook.com/v2.6/me/subscribed_apps?access_token=<PAGE_ACCESS_TOKEN>"
     ```
 
-### Set the missing config values in your Heroku environment:
+### Set the missing configuration values in your Heroku enviroment
 
-    ```
-    heroku config:set PAGE_ACCESS_TOKEN=your-token-here-please-kthxbye
-    heroku config:set VERIFY_TOKEN=your-verify-here-please-kthxbye
-    ```
+```
+heroku config:set PAGE_ACCESS_TOKEN=your-page-access-token-here
+heroku config:set VERIFY_TOKEN=your-verify-token-here
+```
 
-
-
+# ⇨ Go to your Facebook page and start chatting 🤖
