@@ -46,7 +46,7 @@ Following along with this tutorial will leave you with a **live starter-app** th
 7. You should be all set and be able to visit your page at the URL that was output by ```$ heroku create```. You can show the database settings your app is using with the command ```$ heroku config```. You can use the login data to inspect the database with your favourite client to see what's going on.
 
 
-### *Setup your Facebook App*
+### Setup your Facebook App
 
 1. Create or configure a Facebook App here (https://developers.facebook.com/apps/).
 
@@ -56,16 +56,26 @@ Following along with this tutorial will leave you with a **live starter-app** th
 
     ![Set up your bot's webhook URL](/public/img/documentation-img/webhook_subscription_1.png)
 
-3. Configure to which of your pages' events the app should subscribe. You can subscribe to multiple pages.
+3. Configure to which of your pages' events the app should subscribe to.
 
     ![Create a new Facebook App](/public/img/documentation-img/webhook_subscription_2.png)
 
-4. Create a Page Access Token and keep it safe. You need to do this for all the pages you subscribed to in step 3.
+4. Create a Page Access Token and keep it safe. Be sure to pick the same page you picked in step three.
 
     ![Set up a Page Access Token](/public/img/documentation-img/create_access_token.png)
 
-4. Switch back to Terminal use the following command to trigger your Facebbook app to start sending webhooks. Remember to substitute the Page Acces Token you just created for the placeholder <PAGE_ACCESS_TOKEN>. Again, do this for all pages you subscribed to.
+4. Switch back to Terminal and use the following command to trigger your Facebbook app to start sending webhooks. Remember to use the Page Access Token you just created instead of the placeholder at the end of the request. 
 
     ```
     curl -X POST "https://graph.facebook.com/v2.6/me/subscribed_apps?access_token=<PAGE_ACCESS_TOKEN>"
     ```
+
+### Set the missing config values in your Heroku environment:
+
+    ```
+    heroku config:set PAGE_ACCESS_TOKEN=your-token-here-please-kthxbye
+    heroku config:set VERIFY_TOKEN=your-verify-here-please-kthxbye
+    ```
+
+
+
