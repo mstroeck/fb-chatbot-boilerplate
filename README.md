@@ -1,6 +1,6 @@
 # 🤖 Bleep bloop, I'm a bot. Build your own Facebook Messenger bot.
 
-Some of the code snippets were taken from Facebook's [official documentation](https://developers.facebook.com/docs/messenger-platform/quickstart). The docs are concise, but not exactly easy follow if you haven't built a bot and hooked it up to your app or page before. Your best bet in general might be their [Complete Guide] (https://developers.facebook.com/docs/messenger-platform/implementation) for the Messenger platform.
+Some of the code snippets were taken from Facebook's [official documentation](https://developers.facebook.com/docs/messenger-platform/quickstart). The docs are concise, but not exactly easy follow if you haven't built a bot and hooked it up to your app or page before. Your best bet in general might be their [Complete Guide](https://developers.facebook.com/docs/messenger-platform/implementation) for the Messenger platform.
 
 
 ## What to expect
@@ -12,11 +12,11 @@ Following along with this tutorial will leave you with a **live starter-app** th
 
 ### Download, build and deploy the project
 
-1. Get a free [Heroku account] (https://signup.heroku.com/) if you haven't already.
+1. Get a free [Heroku account](https://signup.heroku.com/) if you haven't already.
 
-2. Install the [Heroku toolbelt] (https://toolbelt.heroku.com) which will let you launch, monitor and generally control your instances (and other services like databases) from the command line.
+2. Install the [Heroku toolbelt](https://toolbelt.heroku.com) which will let you launch, monitor and generally control your instances (and other services like databases) from the command line.
 
-3. [Install Node]  (https://nodejs.org), this will be our server environment. Then open up Terminal (or whatever your CLI might be) and make sure you're running the latest version of npm, installed globally (the ```-g``` switch):
+3. [Install Node](https://nodejs.org), this will be our server environment. Then open up Terminal (or whatever your CLI might be) and make sure you're running the latest version of npm, installed globally (the `-g` switch):
 
     ```
     sudo npm install npm -g
@@ -29,13 +29,13 @@ Following along with this tutorial will leave you with a **live starter-app** th
     cd fb-chatbot-boilerplate
     ```
 
-5. Install Node dependencies. We are using [Express] (http://expressjs.com/) for serving stuff, the [Sequelize] (https://github.com/sequelize/sequelize) ORM for database-y stuff, [request] (https://github.com/request/request) and [request-promise] (https://github.com/request/request-promise) for sending and receiving messages, and [body-parser] (https://github.com/expressjs/body-parser) to process responses from Facebook's APIs.
+5. Install Node dependencies. We are using [Express](http://expressjs.com/) for serving stuff, the [Sequelize](https://github.com/sequelize/sequelize) ORM for database-y stuff, [request](https://github.com/request/request) and [request-promise](https://github.com/request/request-promise) for sending and receiving messages, and [body-parser](https://github.com/expressjs/body-parser) to process responses from Facebook's APIs.
 
     ```
     npm install
     ```
 
-6. Create a new Heroku instance, deploy a [free database instance] (https://devcenter.heroku.com/articles/heroku-postgresql) for your server, and push the code to the cloud.  Database configuration happens automagically via Heroku's DATABASE_URL environment variable. We also set an environment variable called ```IS_HEROKU```, because this boilerplate works on any type of host but has some extra smarts for Heroku deployment.
+6. Create a new Heroku instance, deploy a [free database instance](https://devcenter.heroku.com/articles/heroku-postgresql) for your server, and push the code to the cloud.  Database configuration happens automagically via Heroku's DATABASE_URL environment variable. We also set an environment variable called ```IS_HEROKU```, because this boilerplate works on any type of host but has some extra smarts for Heroku deployment.
 
     ```
     heroku create
@@ -80,12 +80,12 @@ heroku config:set FB_APP_ID=your-app-id-here
 heroku config:set FB_PAGE_ID=your-page-id-here
 ```
 
-```FB_APP_ID``` is the app ID of the Facebook App you just created. You can find it directly on the app dashboard. ```FB_PAGE_ID``` is the page ID of the Facebook Page you subscribed to in the app settings. ([Click here] (http://hellboundbloggers.com/2010/07/find-facebook-profile-and-page-id-8516/) in case you don't know how to find it.)
+```FB_APP_ID``` is the app ID of the Facebook App you just created. You can find it directly on the app dashboard. ```FB_PAGE_ID``` is the page ID of the Facebook Page you subscribed to in the app settings. ([Click here](http://hellboundbloggers.com/2010/07/find-facebook-profile-and-page-id-8516/) in case you don't know how to find it.)
 
 # ⇨ Visit the landing page at the root of your Heroku instance and start chatting. 🤖
 
 ## OK, so what now?
 
-If you want to make your bot available publicly, you will have to go through Facebook's [app review process] (https://developers.facebook.com/docs/messenger-platform/app-review) for Messenger bots.
+If you want to make your bot available publicly, you will have to go through Facebook's [app review process](https://developers.facebook.com/docs/messenger-platform/app-review) for Messenger bots.
 
 [Wit.ai](https://wit.ai) is a service that lets you easily create text or voice based bots that humans can chat with on their preferred messaging platform. Basic wit.ai functionality will be baked into this starter app at some point in the future.
